@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript">
+		//	\1:重复的第一个子项
+		//	\2:重复的第二个子项
+		// var str = 'abca';
+		// var reg = /(a)bc\1/;
+		// alert(reg.test(str));
+		//下面两种是不一样的，比如第一种可以是ds，dd，sd但第二中只能是dd，ss
+		// var re = /\w\w/;	
+		// var re = /(\w)\1/;
+		
+		var str = 'asssddfdssffff';
+		str = str.split('').sort().join('');
+
+		var reg = /(\w)\1+/g;
+		var index = 0;
+		var value = '';
+
+		str.replace(reg,function($0,$1){
+			if ($0.length > index) {
+				index = $0.length;
+				value = $1;
+			}
+			else if ($0.length == index) {
+				value += '和' + $1;
+			}
+		});
+
+		alert('最多的字符是' + value + '重复的次数是' + index);
+	</script>
+</head>
+<body>
+</body>
+</html>

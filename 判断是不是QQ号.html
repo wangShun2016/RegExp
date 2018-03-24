@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript">
+	window.onload = function() {
+		//^ : 匹配字符起始的位置
+		//$ : 匹配字符结束的位置
+		var oBtn = document.getElementById('btn');
+		var oTxt = document.getElementById('txt');
+
+		var reg = /^[1-9]\d{5,11}$/;
+		oBtn.onclick = function() {
+			if (reg.test(oTxt.value)) {
+				alert('这是QQ号');
+			}else {
+				alert('这不是QQ号');
+			}
+		};
+	};
+	</script>
+</head>
+<body>
+	<input type="text" id="txt"/>
+	<input type="button" id="btn" value="判断"/>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript">
+		//	.:任意字符
+		//	\.:真正的点
+		//	\b : 独立的部分   （ 起始，结束，空格 ）
+		//	\B : 非独立的部分
+		var str = 'ab c';
+		var reg = /\bc/;
+		alert(reg.test(str));
+
+		var str1 = 'a.c';
+		var reg1 = /a\.c/;
+		alert(reg1.test(str1));
+
+		window.onload = function() {
+			var oUl = document.getElementsByTagName('ul')[0];
+			var aLi = getByClass(oUl,'box2');
+			for (var i=0; i<aLi.length; i++) {
+				aLi[i].style.background = 'red';
+			}
+			function getByClass(obj, className) {
+				var aEle = obj.getElementsByTagName('*');
+				var arr = [];
+				//当正则需要传参的时候必须得用全称的写法
+				var reg = new RegExp('\\b' + className + '\\b');
+				for (var i=0; i<aEle.length; i++) {
+					if (reg.test(aEle[i].className)) {
+						arr.push(aEle[i]);
+					}
+				}
+				return arr;
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul>
+		<li class="box1"></li>
+		<li class="box1 box2"></li>
+		<li class="box1box2"></li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript">
+		window.onload = function() {
+			var aT = document.getElementsByTagName('textarea');
+			var oBtn = document.getElementById('btn');
+
+			var reg = /<[^>]+>/g;
+
+			oBtn.onclick = function() {
+				aT[1].value = aT[0].value.replace(reg,'');
+			};
+		}
+	</script>
+</head>
+<body>	
+	替换前<br>
+	<textarea></textarea><br>
+	替换后<br>
+	<textarea></textarea><br>
+	<input type="button" id="btn" value="过滤">
+</body>
+</html>

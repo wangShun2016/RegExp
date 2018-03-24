@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript">
+		//字符类：一组相似的元素
+		//[]中括号的整体代表一个字符
+		var str = 'abc';
+		var reg = /a[bs]c/;
+		alert(reg.test(str)); //true;
+
+		//如果^写在里面的话就代表排除的意思
+		var str1 = 'abc';
+		var reg1 = /a[^b]c/;
+		alert(reg1.test(str1));//false;
+
+		var str2 = 'abc';
+		var reg2 = /a[a-z0-9]c/;
+		alert(reg2.test(str2));
+	</script>
+</head>
+<body>	
+</body>
+</html>

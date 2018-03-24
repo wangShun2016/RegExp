@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript">
+		//把正则的整体叫做（母亲）
+		//然后把左边第一个小括号里面的正则，叫做这个第一个子项(母亲的第一个孩子)
+		//第二个小括号就是第个子项
+		var str = '2013-6-7';
+		var reg = /(\d+)(-)/g;
+		str = str.replace(reg,function($0, $1, $2){
+			//$0是指匹配到对应正则整体的内容
+			//$1是指对应正则第一个子项的内容
+			//$2是指对应正则第二个子项的内容
+			return $1 + '.';
+			// return $0.substring(0, $0.length-1) + '.';
+		});
+		alert(str);		//2013.6.5
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

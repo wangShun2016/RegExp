@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript">
+	window.onload = function() {
+		var aT = document.getElementsByTagName('textarea');
+		var oBtn = document.getElementById('btn');
+		var reg = /中国|仁爱礁|监视/g;
+
+		oBtn.onclick = function() {
+			aT[1].value = aT[0].replace(reg, function($0){
+				var result = '';
+				for (var i=0; i<$0.length; i++) {
+					result += '*';
+				}
+				return result;
+			});
+		}
+	}
+	</script>
+</head>
+<body>
+	过滤前<br/>
+	<textarea></textarea><br/>
+	过滤后<br/>
+	<textarea></textarea><br/>
+	<input type="button" id="btn" value="过滤"/>
+</body>
+</html>
